@@ -14,7 +14,7 @@ function FileForm() {
   }
 
   function submitToAPI(data) {
-    fetch("/posts", {
+    fetch("http://localhost:3000/posts", {
       method: "POST",
       body: data,
     })

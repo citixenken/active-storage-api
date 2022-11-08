@@ -38,6 +38,11 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
+  def latest
+    @post = Post.last
+    render json: @post
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -46,6 +51,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title)
+      params.require(:post).permit(:title, :image)
     end
 end
